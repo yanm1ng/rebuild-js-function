@@ -53,7 +53,7 @@ ajax({
     b: '2' 
   },
   success: function (response, status) {
-
+    
   },
   error: function (status) {
   }

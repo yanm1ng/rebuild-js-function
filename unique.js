@@ -1,4 +1,4 @@
-Array.prototype.unique = function () {
+Array.prototype.newUnique = function () {
   var result = [];
   this.forEach(function (v) {
     if (result.indexOf(v) < 0) {
@@ -8,7 +8,7 @@ Array.prototype.unique = function () {
   return result;
 }
 
-Array.prototype.unique = function () {
+Array.prototype.newUnique = function () {
   var result = [], hash = {};
   this.forEach(function (v) {
     if (!hash[v]) {
@@ -19,7 +19,7 @@ Array.prototype.unique = function () {
   return result;
 }
 
-Array.prototype.unique = function () {
+Array.prototype.newUnique = function () {
   var result = [this[0]];
   this.sort();
   this.forEach(function (v) {

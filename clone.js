@@ -1,7 +1,13 @@
-Object.prototype.clone = function () {
+Object.prototype.newClone = function () {
   var o = this.constructor === Array ? [] : {};
   for (var e in this) {
-    o[e] = typeof this[e] === "object" ? this[e].clone() : this[e];
+    if (this[e].constructor !== Function) {
+      o[e] = (typeof this[e] === "object") ? this[e].clone() : this[e]; 
+    }
   }
   return o;
 }
+
+var a = [1, '2', 3];
+var b = a.newClone();
+console.log(b);
