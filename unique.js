@@ -20,6 +20,13 @@ Array.prototype.newUnique = function () {
 }
 
 Array.prototype.newUnique = function () {
+  var result = [];
+  this.filter(function (el, index, self) {
+    return self.indexOf(el) === index;
+  })
+}
+
+Array.prototype.newUnique = function () {
   var result = [this[0]];
   this.sort();
   this.forEach(function (v) {
