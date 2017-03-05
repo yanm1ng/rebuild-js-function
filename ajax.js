@@ -36,7 +36,7 @@ function ajax(obj) {
   function formatParams(data) {
     let arr = [];
     for (let name in data) {
-      arr.push(encodeURICompontent(name) + '=' + encodeURICompontent(data[name]));
+      arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
     }
 
     arr.push('t=' + Math.random());
