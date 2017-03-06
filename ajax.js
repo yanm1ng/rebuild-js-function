@@ -12,7 +12,7 @@ function ajax(obj) {
   }
 
   xhr.onreadystatechange = function () {
-    if (xhr.readtState == 4) {
+    if (xhr.readyState == 4) {
       //判断对象的状态是否交互完成
       if (xhr.state >= 200 && xhr.status < 300) {
         obj.success && obj.success(xhr.responseText, xhr.status);
