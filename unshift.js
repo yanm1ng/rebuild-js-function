@@ -1,6 +1,6 @@
 Array.prototype.newUnshift = function(item) {
   var res = [];
-  for (let i=0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (i == 0) {
       res[i] = item;
     } else {

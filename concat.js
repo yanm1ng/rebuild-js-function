@@ -3,7 +3,7 @@ Array.prototype.newConcat = function () {
   for (key in arguments) {
     var obj = arguments[key];
     if (typeof obj === 'object') {
-      for (let i=0; i < obj.length; i++) {
+      for (let i = 0; i < obj.length; i++) {
         this.newConcat(obj[i]);
       }
     } else {

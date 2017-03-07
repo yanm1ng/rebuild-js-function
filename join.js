@@ -1,6 +1,6 @@
 Array.prototype.newJoin = function(str) {
   var res = '';
-  for (let i=0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (i === this.length - 1) {
       res += this[i];
     } else {
@@ -14,10 +14,10 @@ Array.prototype.newJoin = function(str) {
   var times = this.length - 1;
   var res = '';
 
-  for (let i=0; i < times; i++) {
+  for (let i = 0; i < times; i++) {
     this.splice(i * 2 + 1, 0, str);
   }
-  for (let i=0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     res += this[i];
   }
   return res;
