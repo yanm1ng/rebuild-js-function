@@ -13,3 +13,14 @@ const isURL = function (str) {
   return exp.test(str);
 }
 
+const isEmail = function (str) {
+  var exp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+  return exp.test(str);
+}
+
+const isQQ = function (str) {
+  var exp = /[1-9][0-9]{4,}/;
+  return exp.test(str);
+}
+
+console.log(isQQ('01212'));

@@ -1,5 +1,6 @@
 ### 重写常用的一些JavaScript函数
 
+例如：
 ### ajax
 
 创建AJAX基本流程：
