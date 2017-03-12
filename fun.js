@@ -54,4 +54,17 @@ var a = (1, 3, 4, 5);
 console.log(a);
 // 5
 
+var falseObj = new Boolean(false);
+var falseVal = false;
+var result = falseObj && true;
+console.log(result);
+// true
 
+console.log(typeof falseObj);
+// object
+console.log(typeof falseVal);
+// boolean
+console.log(falseObj instanceof Boolean);
+// true
+console.log(falseVal instanceof Boolean);
+// false
