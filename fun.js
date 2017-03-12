@@ -9,4 +9,49 @@ function string2int(s) {
   });
 }
 var s = string2int('123');
-console.log(s);
+// console.log(s);
+
+function sum(a, b) {
+  return a + b;
+}
+var anotherSum = sum;
+console.log(sum(1, 2));
+// 3
+console.log(anotherSum(1, 2));
+// 3
+sum = null;
+console.log(anotherSum(1, 2));
+// 3
+// 如何理解？
+// 将function sum(a, b) { return a + b; } 理解成 var sum = function (a, b) { return a + b; }, 函数是对象，函数名 sum 和 anotherSum 只是指针
+
+console.log(null == undefined);
+// true
+console.log(null === undefined);
+// false
+console.log(NaN == NaN);
+// false
+console.log(NaN === NaN);
+// false
+console.log(NaN != NaN);
+// true
+console.log(true == 1);
+// true
+console.log(true === 1);
+// false
+console.log(true == 2);
+// false
+console.log('5' == 5);
+// true
+console.log('5' === 5);
+// false
+console.log(null == 0);
+// false
+console.log(undefined == 0);
+// false
+
+var a = (1, 3, 4, 5);
+console.log(a);
+// 5
+
+
