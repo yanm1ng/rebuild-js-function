@@ -68,3 +68,41 @@ console.log(falseObj instanceof Boolean);
 // true
 console.log(falseVal instanceof Boolean);
 // false
+
+function createFunctions() {
+  var result = [];
+  for (var i = 0; i < 5; i++) {
+    result[i] = function (num) {
+      return function () {
+        return num;
+      };
+    }(i);
+  }
+  return result;
+}
+var res = createFunctions();
+console.log(res);
+
+var name = 'The Window';
+var object = {
+  name: 'The Object',
+  getName: function () {
+    return function () {
+      return this.name;
+    }
+  }
+}
+console.log(object.getName()());
+// The Window
+
+var object = {
+  name: 'The Object',
+  getName: function () {
+    var that = this;
+    return function () {
+      return that.name;
+    }
+  }
+}
+console.log(object.getName()());
+// The Object
