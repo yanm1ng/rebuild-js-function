@@ -33,3 +33,17 @@ Array.prototype.newUnique = function () {
     v != result[result.length - 1] && result.push(v);
   });
 }
+
+Array.prototype.newUnique = function () {
+  this.sort();
+  var res = [this[0]];
+  for (var i = 1; i < this.length; i++) {
+    if (this[i] !== res[res.length - 1]) {
+      res.push(this[i]);
+    }
+  }
+  return res;
+}
+
+var a = ['a', 'b', 'c', 'd', 'b', 'c'];
+console.log(a.newUnique());

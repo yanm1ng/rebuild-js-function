@@ -15,5 +15,4 @@ Array.prototype.newConcat = function () {
 }
 
 var a = [0, 8];
-var b = a.newConcat(1, 2, [3, 4]);
-console.log(b);
+console.log(a.newConcat(1, 2, [3, 4]));

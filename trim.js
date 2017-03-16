@@ -1,5 +1,5 @@
-String.prototype.newTrim = function() {
-  return this.replace(/(^\s*)|(\s*)$/g, ''); //去除前后空白符
+String.prototype.newTrim = function () {
+  return this.replace(/(^\s*)|(\s*)$/g, '');
 }
 
 var str = 'aa';

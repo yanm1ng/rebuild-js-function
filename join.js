@@ -1,4 +1,4 @@
-Array.prototype.newJoin = function(str) {
+Array.prototype.newJoin = function (str) {
   var res = '';
   for (let i = 0; i < this.length; i++) {
     if (i === this.length - 1) {
@@ -10,7 +10,7 @@ Array.prototype.newJoin = function(str) {
   return res;
 }
 
-Array.prototype.newJoin = function(str) {
+Array.prototype.newJoin = function (str) {
   var times = this.length - 1;
   var res = '';
 

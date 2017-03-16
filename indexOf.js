@@ -17,4 +17,4 @@ Array.prototype.newIndexOf = function (value, start) {
 }
 // 测试
 console.log([2, 4, 1, 8, 5].newIndexOf(1));
-//输出2
+// 2

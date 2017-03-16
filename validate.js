@@ -23,4 +23,9 @@ const isQQ = function (str) {
   return exp.test(str);
 }
 
-console.log(isQQ('01212'));
+const isPassword = function (str) {
+  var exp = /^(\w){6,20}$/;
+  return exp.test(str);
+}
+
+console.log(isPassword('012a12'));

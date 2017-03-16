@@ -50,10 +50,10 @@ ajax({
   dataType: 'json',
   data: {
     a: '1',
-    b: '2' 
+    b: '2'
   },
   success: function (response, status) {
-    
+
   },
   error: function (status) {
   }
