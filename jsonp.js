@@ -11,17 +11,17 @@ function jsonp(config) {
     _head.removeChild(_script);
     clearTimeout(_script.timer);
     window[_callback] = null;
-    options.success && options.success(json);
+    _options.success && _options.success(json);
   };
-  _script.src = options.url + '?' + _callback;
+  _script.src = _options.url + '?' + _callback;
   // 发送请求
-  if (options.time) {
+  if (_options.time) {
     // 设置超时处理
     _script.timer = setTimeout(function () {
       window[_callback] = null;
       _head.removeChild(_script);
-      options.fail && options.fail({ message: "超时" });
-    }, options.time);
+      _options.fail && _options.fail({ message: "超时" });
+    }, _options.time);
   }
 };
 
