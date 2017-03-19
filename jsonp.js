@@ -1,7 +1,7 @@
 function jsonp(config) {
   var _options = config || {};
   var _callback = ('jsonp_' + Math.random()).replace(".", "");
-  var _head = document.getElementsByTagName('head')[0];
+  var _head = document.head || document.getElementsByTagName('head')[0];
   var _script = document.createElement('script');
   // 添加script标签
   _head.appendChild(_script);
