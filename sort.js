@@ -54,3 +54,24 @@ function InsertSort(array) {
 }
 console.log(InsertSort(arr));
 // [ 2, 16, 32, 37, 45, 87 ]
+
+function shellSort(array) {
+  var h = 1;
+  var len = array.length;
+  while (h < Math.floor(len / 3)) {
+    h = h * 3 + 1;
+  }
+  while (h >= 1) {
+    for (var i = h; i < len; i++) {
+      for (var j = i; j >= h; j -= h) {
+        if (array[j] < array[j - h]) {
+          array[j] = [array[j - h], array[j - h] = array[j]][0];
+        }
+      }
+    }
+    h = Math.floor(h / 3);
+  }
+  return array;
+}
+console.log(shellSort(arr));
+// [ 2, 16, 32, 37, 45, 87 ]
