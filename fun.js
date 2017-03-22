@@ -68,3 +68,26 @@ console.log(falseObj instanceof Boolean);
 // true
 console.log(falseVal instanceof Boolean);
 // false
+
+var a = [1, 2, 3, 4, 5];
+a.push(a.shift());
+a.push(a.shift());
+console.log(a);
+
+function changeStr(str) {
+  var arr = str.split('-');
+  for (let i = 1; i < arr.length; i++) {
+    arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+  }
+  return arr.join('');
+}
+
+function changeStr(str) {
+  var re = /-(\w)/g;
+  str = str.replace(re, function ($0, $1) {
+    return $1.toUpperCase();
+  });
+  return str;
+}
+
+console.log(changeStr('border-bottom-color'));
