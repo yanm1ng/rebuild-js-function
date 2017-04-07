@@ -45,5 +45,14 @@ Array.prototype.newUnique = function () {
   return res;
 }
 
+Array.prototype.newUnique = function() {
+  return Array.from(new Set(this));
+}
+
+Array.prototype.newUnique = function() {
+  return [...new Set(this)];
+}
+
 var a = ['a', 'b', 'c', 'd', 'b', 'c'];
 console.log(a.newUnique());
+// [ 'a', 'b', 'c', 'd' ]
