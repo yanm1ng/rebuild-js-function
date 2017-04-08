@@ -91,3 +91,18 @@ function changeStr(str) {
 }
 
 console.log(changeStr('border-bottom-color'));
+
+function getBytes(str) {
+  var len = str.length,
+      bytes = len;
+  for (var i = 0; i < len; i++) {
+    if (str.CharCodeAt > 255) {
+      bytes++;
+    }
+  }
+  return bytes;
+}
+
+console.log(getBytes('你好aaa'));
+// 5
+
