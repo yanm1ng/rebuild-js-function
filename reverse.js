@@ -24,5 +24,18 @@ Array.prototype.newReverse = function () {
   return a;
 }
 
+Array.prototype.newReverse = function () {
+  var i = 0, j = this.length - 1;
+  while (i < j) {
+    var t = this[i];
+    this[i] = this[j];
+    this[j] = t;
+    i++;
+    j--;
+  }
+  return this;
+}
+
 var a = [1, 2, 3];
 console.log(a.newReverse());
+// [3, 2, 1]

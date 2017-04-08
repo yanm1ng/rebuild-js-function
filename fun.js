@@ -94,7 +94,7 @@ console.log(changeStr('border-bottom-color'));
 
 function getBytes(str) {
   var len = str.length,
-      bytes = len;
+    bytes = len;
   for (var i = 0; i < len; i++) {
     if (str.CharCodeAt > 255) {
       bytes++;
@@ -106,3 +106,27 @@ function getBytes(str) {
 console.log(getBytes('你好aaa'));
 // 5
 
+function randomString(n) {
+  let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let tmp = '';
+  const l = str.length;
+  for (let i = 0; i < n; i++) {
+    tmp += str.charAt(Math.floor(Math.random() * l));
+  }
+  return tmp;
+}
+
+console.log(randomString(8));
+// YcSb2YO4
+
+function bouncer(arr) {
+  function isBigEnough(element) {
+    if (element !== false || element !== null || element !== 0 || element !== "" || element !== undefined || element !== NaN) {
+      return element;
+    }
+  }
+  var filtered = arr.filter(isBigEnough);
+  return filtered;
+}
+console.log(bouncer([7, "ate", "", false, 9]));
+// [ 7, 'ate', 9 ]
