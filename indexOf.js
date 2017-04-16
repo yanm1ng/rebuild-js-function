@@ -1,19 +1,38 @@
-Array.prototype.newIndexOf = function (value, start) {
-  if (this == null) return -1;
-  var i = 0, length = this.length;
-  if (start) {
-    if (typeof start == 'number') {
-      i = (start < 0 ? Math.max(0, length + start) : start);
-
-    }
-    // 遍历数组
-    for (; i < length; i++) {
-      if (this[i] === value) {
-        return i;
-      }
-    }
+Array.prototype.newIndexOf = function (element, fromIndex) {
+  if (this.length === 0 || this.length < fromIndex) {
     return -1;
   }
+  var index = fromIndex || 0;
+  var length = this.length;
+  if (fromIndex < 0) {
+    index = length + fromIndex;
+  }
+
+  for (; index < length; index++) {
+    if (this[index] === element) {
+      return index;
+    }
+  }
+  return -1;
+}
+
+Array.prototype.newLastIndexOf = function (element, fromIndex) {
+  if (this.length === 0 || (fromIndex < 0 && this.length < Math.abs(fromIndex))) {
+    return -1;
+  }
+
+  var length = this.length;
+  var index = fromIndex || length - 1;
+  if (fromIndex < 0) {
+    index = length + fromIndex;
+  }
+
+  for (; index > -1; index--) {
+    if (this[index] === element) {
+      return index;
+    }
+  }
+  return -1;
 }
 // 测试
 console.log([2, 4, 1, 8, 5].newIndexOf(1));
