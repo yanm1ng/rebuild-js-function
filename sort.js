@@ -7,14 +7,14 @@ function quickSort(array) {
     return array;
   } else {
     // 基准
-    var base = [array[0]];
+    var base = array[0];
     var smaller = [];
     var bigger = [];
 
     for (var i = 1; i < len; i++) {
       array[i] < base ? smaller.push(array[i]) : bigger.push(array[i]);
     }
-    return quickSort(smaller).concat(base.concat(quickSort(bigger)));
+    return quickSort(smaller).concat([base], quickSort(bigger));
   }
 }
 console.log(quickSort(arr));

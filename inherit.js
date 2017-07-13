@@ -40,7 +40,7 @@ function Parent(name) {
   }
 }
 function Child(name) {
-  Parent.call(this, [name]);
+  Parent.apply(this, [name]);
 }
 var chlid = new Child('son');
 chlid.say();

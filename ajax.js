@@ -6,8 +6,7 @@ function ajax(obj) {
 
   if (window.XMLHttpRequest) {
     const xhr = new XMLHttpRequest();
-  }
-  else {
+  } else {
     const xhr = new ActiveXObject('Microsoft.XMLHTTP');
   }
 
@@ -16,8 +15,7 @@ function ajax(obj) {
       //判断对象的状态是否交互完成
       if (xhr.status >= 200 && xhr.status < 300) {
         obj.success && obj.success(xhr.responseText, xhr.status);
-      }
-      else {
+      } else {
         obj.error && obj.error(xhr.status);
       }
     }
@@ -26,8 +24,7 @@ function ajax(obj) {
   if (obj.type == 'GET') {
     xhr.open('GET', obj.url + '?' + params, true);
     xhr.send(null);
-  }
-  else if (obj.type == 'POST') {
+  } else if (obj.type == 'POST') {
     xhr.open('POST', obj.url, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.send(params);
@@ -53,8 +50,9 @@ ajax({
     b: '2'
   },
   success: function (response, status) {
-
+    //
   },
   error: function (status) {
+    //
   }
 })

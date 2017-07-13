@@ -1,6 +1,6 @@
 // javascript创建对象简单的说, 无非就是使用内置对象或各种自定义对象, 当然还可以用JSON
 
-// 1、对象字面量的方式
+// 1、对象字面量的方式，简单清晰，不能有效识别对象类型
 var person = {
   name: 'yanm1ng',
   age: 22
@@ -11,15 +11,15 @@ function createPerson(name, age) {
   var person = new Object();
   person.name = name;
   person.age = age;
-  person.work = function () {
-    console.log(person.name + " working...");
+  person.like = function () {
+    console.log(person.name + " like eating");
   }
   return person;
 }
-createPerson('yanm1ng', 22).work();
+createPerson('yanm1ng', 22).like();
 
 
-// 3、用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）
+// 3、用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性），方法不被实例共享
 function Person(name, age, hobby) {
   this.name = name;
   this.age = age;
@@ -34,17 +34,17 @@ console.log(person instanceof Person);
 // true
 
 
-// 4、用Objectt构造函数来创建一个对象
+// 4、用Object构造函数来创建一个对象
 var obj = new Object();
 obj.name = "yanm1ng";
 obj.age = 22;
-obj.work = function () {
-  console.log(obj.name + " working...");
+obj.like = function () {
+  console.log(obj.name + " like eating");
 }
-obj.work();
+obj.like();
 
 
-// 5、用原型方式来创建
+// 5、用原型方式来创建，属性也被实例共享
 function Person() {}
 Person.prototype.name = "yanm1ng";
 Person.prototype.age = 22;
@@ -53,6 +53,7 @@ Person.prototype.like = function () {
 }
 // 简写
 Person.prototype = {
+  constructor: Person,
   name: 'yanm1ng',
   age: 22,
   like: function() {

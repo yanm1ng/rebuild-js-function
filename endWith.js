@@ -5,3 +5,4 @@ String.prototype.newEndWith = function (s) {
 
 var str = 'aabbcc';
 console.log(str.newEndWith('bcc'));
+// true
